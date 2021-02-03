@@ -27,46 +27,7 @@
 <footer style="text-align: center; align-items: center; position: absolute; bottom: 5px; font-family: sans-serif;">
 	<p>you can edit this page! it's creative. add what you want, it will only change for you.</p>
 </footer>
-<script>
-function authuser() {
-var user = prompt("username:")
-var userok = prompt(user,"true/false")
-if (userok == "true") {
-document.getElementById("signin").disabled = true
-setTimeout('alert("done")',200)
-}
-if (userok == "false") {
-  var user = ""
-  alert("username removed from client info")
-  document.getElementById("signin").disabled = false
-}
-}
-var userok = "false"
-</script>
-<div id="wrapper">
-		<div class="adBar">
-			&nbsp;
-		</div>
-	</div>
-	<script>
-		
-				const parameters = new URLSearchParams(window.location.search)
-    var searchterm = parameters.replace("s=","")
-    parameters.replace("s=","") == "" ? var search = true : var search = false
-    if (search) {
-      document.getElementById("searchterm").hidden = false
-    } else {
-      document.getElementById("searchterm").hidden = true
-    }
-		document.addEventListener("DOMContentLoaded", function() {
-			setTimeout(function() {
-				if (document.getElementById("wrapper").offsetHeight) {
-				} else {
-					alert('Please disable your ad blocker. StoryTime never, ever shows ads, but others do. Often their only source of income is through ads, and that is the only way they can keep creating their amazing free services.')
-				}
-			}, 1000)
-		});
-	</script>
+	  <script src="/homepage.js"></script>
   </body>
 </html>
 
