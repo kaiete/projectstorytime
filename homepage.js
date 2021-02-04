@@ -14,7 +14,8 @@ document.getElementById("signin").disabled = false
 var userok = "false"
 const parameters = new URLSearchParams(window.location.search)
 var searchterm = parameters.replace("s=","") 
-parameters.replace("s=","") == "" ? var search = true : var search = false
+var search
+parameters.replace("s=","") == "" ? search = true : search = false
 if (search) {
 document.getElementById("searchterm").hidden = false
 } else {
