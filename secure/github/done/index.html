@@ -1,15 +1,17 @@
 <script>
   function getParams() {
     const params = new URLSearchParams(window.location.search)
-    var editedparams = params.replace("code=","")
+    const editedparams = params.replace("code=","")
     return editedparams
   }
   var logincode = getParams()
   function showoauthcode() {
-    document.getElementById('code').innerHTML = getParams()
+    logincode = "https://github.com/login/oauth/access_token" + "e50b39933f8e05fad9b3" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f" + editedparams
+    document.getElementById('code').innerHTML = "<a href='" + logincode +"'>Continue</a>"
     document.getElementById('hidecode').hidden = false
     document.getElementById('time').hidden = false
     setTimeout('hideauthcode()',10000)
+    
   }
   function hideauthcode() {
   document.getElementById('code').innerHTML = ""
@@ -20,7 +22,7 @@
 <body style="text-align: center; align-items: center; font-family: sans-serif;">
   <h1>All done and dusted!</h1>
   <p>You're signed in.</p>
-  <p>Tap <button type="button" onclick="showoauthcode()">here</button> for the login code. Don't share it.</p>
+  <p>Tap <button type="button" onclick="showoauthcode()">here</button> for the login URL. Don't share it.</p>
   <p id='code'></p>
   <button hidden onclick="hideauthcode()" id="hidecode">
   Hide code
