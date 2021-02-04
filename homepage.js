@@ -1,5 +1,5 @@
 //Change variable if storytime is down/vice versa
-const down = true
+const down = false
 if (down) {
   window.location.replace("https://aragon-press.com/nope/")
 }
