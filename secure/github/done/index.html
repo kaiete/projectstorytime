@@ -1,7 +1,7 @@
 <script>
   function getParams() {
     const params = new URLSearchParams(window.location.search)
-    const editedparams = params.replace("code=","")
+    const editedparams = params.toString().replace("code=","")
     return editedparams
   }
   var logincode = getParams()
