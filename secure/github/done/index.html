@@ -1,4 +1,6 @@
-<script>
+
+<body style="text-align: center; align-items: center; font-family: sans-serif;">
+  <script>
   function getParams() {
     const params = new URLSearchParams(window.location.search)
     const editedparams = params.toString().replace("code=","")
@@ -19,7 +21,6 @@
     document.getElementById('time').hidden = true
   }
 </script>
-<body style="text-align: center; align-items: center; font-family: sans-serif;">
   <h1>All done and dusted!</h1>
   <p>You're signed in.</p>
   <p>Tap <button type="button" onclick="showoauthcode()">here</button> for the login URL. Don't share it.</p>
