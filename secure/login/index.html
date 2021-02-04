@@ -1,10 +1,17 @@
+<!doctype html>
+<body>
 <div class="main">
   <h1>StoryTime login</h1>
-  <button type="button" onclick="authuser()">Sign me in!</button>
+  <button type="button" onclick="authuser('discord')">Sign me in using Discord!</button>
+  <button onclick="authuser('github')">Sign me in with GitHub!</button>
 </div>
 <script>
-function authuser() {
-window.location.href = "/secure/discord/"
+function authuser('oauthtype') {
+  if (oauthtype == 'discord') {
+    window.location.href = "/secure/discord/"
+  } else if (oauthtype == 'github') {
+    window.location.href = "/secure/github/"
+  }
 } 
 </script>
 <style>
@@ -12,6 +19,11 @@ window.location.href = "/secure/discord/"
     font-family: sans-serif;
     color: black;
     align-items: center;
+    text-align: center;
+    padding-top: 50;
+  }
+  body {
+    background-image: url("https://edu.aragon-press.com/aragon-press-edu-math-background.jpeg");
   }
 </style>
 
