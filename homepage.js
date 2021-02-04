@@ -1,3 +1,10 @@
+//Change variable if storytime is down/vice versa
+const down = true
+if (down) {
+  window.location.replace("https://aragon-press.com/nope/")
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
 var user = prompt("username:") 
 var userok = prompt(user,"true/false") 
@@ -24,8 +31,4 @@ document.getElementById("searchterm").hidden = true
 function hidenosearch() {
   document.getElementById("searchterm").hidden = true
 }
-//Change variable if storytime is down/vice versa
-const down = true
-if (down) {
-  window.location.replace("https://aragon-press.com/nope/")
-}
+
