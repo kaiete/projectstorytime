@@ -8,7 +8,7 @@
   }
   var logincode
   function showoauthcode() {
-    logincode = "https://github.com/login/oauth/access_token=" + "e50b39933f8e05fad9b3" + "&client_secret=" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f&code=" + getParams()
+    logincode = "https://github.com/login/oauth/access_token/?client_id=" + "e50b39933f8e05fad9b3" + "&client_secret=" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f&code=" + getParams()
     document.getElementById('code').innerHTML = "<a href='" + logincode +"' target='_blank'>Continue</a>"
     document.getElementById('hidecode').hidden = false
     document.getElementById('time').hidden = false
