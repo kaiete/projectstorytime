@@ -4,9 +4,9 @@
     const editedparams = params.toString().replace("code=","")
     return editedparams
   }
-  var logincode = getParams()
+  var logincode
   function showoauthcode() {
-    logincode = "https://github.com/login/oauth/access_token" + "e50b39933f8e05fad9b3" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f" + editedparams
+    logincode = "https://github.com/login/oauth/access_token" + "e50b39933f8e05fad9b3" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f" + getParams()
     document.getElementById('code').innerHTML = "<a href='" + logincode +"'>Continue</a>"
     document.getElementById('hidecode').hidden = false
     document.getElementById('time').hidden = false
