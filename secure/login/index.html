@@ -1,11 +1,6 @@
 <!doctype html>
 <body>
-<div class="main">
-  <h1>StoryTime login</h1>
-  <button type="button" onclick="authuser('discord')">Sign me in using Discord!</button>
-  <button onclick="authuser('github')">Sign me in with GitHub!</button>
-</div>
-<script>
+  <script>
 function authuser('oauthtype') {
   if (oauthtype == 'discord') {
     window.location.href = "/secure/discord/"
@@ -14,6 +9,11 @@ function authuser('oauthtype') {
   }
 } 
 </script>
+<div class="main">
+  <h1>StoryTime login</h1>
+  <button type="button" onclick="authuser('discord')">Sign me in using Discord!</button>
+  <button onclick="authuser('github')">Sign me in with GitHub!</button>
+</div>
 <style>
   .main {
     font-family: sans-serif;
