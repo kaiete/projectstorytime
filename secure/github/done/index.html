@@ -1,0 +1,29 @@
+<script>
+  function getParams() {
+    const params = new URLSearchParams(window.location.search)
+    var editedparams = params.replace("code=","")
+    return editedparams
+  }
+  var logincode = getParams()
+  function showoauthcode() {
+    document.getElementById('code').innerHTML = getParams()
+    document.getElementById('hidecode').hidden = false
+    document.getElementById('time').hidden = false
+    setTimeout('hideauthcode()',10000)
+  }
+  function hideauthcode() {
+  document.getElementById('code').innerHTML = ""
+  document.getElementById('hidecode').hidden = true
+    document.getElementById('time').hidden = true
+  }
+</script>
+<body style="text-align: center; align-items: center; font-family: sans-serif;">
+  <h1>All done and dusted!</h1>
+  <p>You're signed in.</p>
+  <p>Tap <button type="button" onclick="showoauthcode()">here</button> for the login code. Don't share it.</p>
+  <p id='code'></p>
+  <button hidden onclick="hideauthcode()" id="hidecode">
+  Hide code
+  </button>
+  <p id="time" hidden>the code will be hidden automatically in 10 seconds</p>
+</body>
