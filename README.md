@@ -2,6 +2,9 @@
 
 > Stories. **For free**. *For all*. ***Forever***.
 
+Useful links:
+* [Terms](https://github.com/kaiete/projectstorytime/blob/main/terms/fullterms.md)
+
 just look at the code, it's pretty simple.
 
 all the stories are from [aragon press.](https://aragon-press.com)
