@@ -20,7 +20,7 @@ document.getElementById("signin").disabled = false
 }
 var userok = "false"
 const parameters = new URLSearchParams(window.location.search)
-var searchterm = parameters.replace("s=","") 
+var searchterm = parameters.toString().replace("s=","") 
 var search
 parameters.replace("s=","") == "" ? search = true : search = false
 if (search) {
