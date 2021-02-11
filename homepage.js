@@ -3,6 +3,28 @@ const down = false
 if (down) {
   window.location.replace("https://aragon-press.com/nope/")
 }
+//Define QueryTools (modified)
+var qt = {
+  mod : function(id,to) {
+    document.getElementById(id).innerHTML = to
+  },
+  ask : function(query) {
+    let askresponse = prompt(query)
+    return askresponse
+  },
+  say : function(msg) {
+    alert(msg)
+  },
+  log : function(msg) {
+    console.log(msg)
+  },
+  link : function(site) {
+    window.location.href=site
+  },
+  redir : function(site) {
+    window.location.replace(site)
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
