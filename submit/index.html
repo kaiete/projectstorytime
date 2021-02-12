@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/b4r1h5j7xwg1028y95dqnwasfi1svnjlzysty2idhnnexyc3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+<form method="GET" action="https://projectstorytime.vercel.app/api/submitstory/">
+  <textarea name="story" required>
+  </textarea>
+  <label for="authorURL" style="font-family: Helvetica, sans-serif;">Your website: </label><input type="url" name="authorURL" id="authorURL">
+</form>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+    });
+  </script>
+</body>
+</html>
