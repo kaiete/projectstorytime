@@ -49,9 +49,9 @@
     <script>
       const params = qt.params()
       if (params.toString().includes("basic") == true) {
+        qt.mod("style","")
         document.getElementById("basicHTML").hidden = false
         document.getElementById("body").hidden = true
-        qt.mod("style","")
       } else {
         document.getElementById("basicHTML").hidden = true
         document.getElementById("body").hidden = false
