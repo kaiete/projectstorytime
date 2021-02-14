@@ -1,1 +1,60 @@
 <!doctype html>
+<html>
+  <head><title>StoryFinder</title></head>
+  <body id="body">
+    <h1>Table of stories - 'Story Finder'</h1>
+    <h3>By author:</h3>
+    <table>
+      <tr>
+        <th>Fern</th>
+        <th>kaiete</th>
+        <th>frepds</th>
+      </tr>
+      <tr>
+        <td><em>nothing here yet...</em></td>
+        <td>The Mouse called John</td>
+        <td>The Water Shrew</td>
+      </tr>
+    </table>
+    <style id="style">
+      body {
+        align-items: center;
+        text-align: center;
+        font-family: Helvetica, Courier, sans-serif;
+      }
+      th, tr, td , table {
+        border-color: black;
+        border-width: 5px;
+        border-collapse: collapse;
+      }
+    </style>
+    <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+    <script>
+      const params = qt.params()
+      if (params.toString.includes("basic") == true) {
+        document.getElementById("basicHTML").hidden = false
+        document.getElementById("body").hidden = true
+        qt.mod("style","")
+      } else {
+        document.getElementById("basicHTML").hidden = true
+        document.getElementById("body").hidden = false
+      }
+    </script>
+  </body>
+  <footer>
+    <div id="basicHTML">
+    <table>
+      <tr>
+        <th>Fern</th>
+        <th>kaiete</th>
+        <th>frepds</th>
+      </tr>
+      <tr>
+        <td><em>nothing here yet...</em></td>
+        <td>The Mouse called John</td>
+        <td>The Water Shrew</td>
+      </tr>
+    </table>
+    </div>
+  </footer>
+</html>
