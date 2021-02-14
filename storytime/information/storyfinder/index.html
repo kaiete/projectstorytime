@@ -32,7 +32,7 @@
     <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
     <script>
       const params = qt.params()
-      if (params.toString.includes("basic") == true) {
+      if (params.toString().includes("basic") == true) {
         document.getElementById("basicHTML").hidden = false
         document.getElementById("body").hidden = true
         qt.mod("style","")
