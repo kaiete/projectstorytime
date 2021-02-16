@@ -6,10 +6,17 @@
   }
   var logincode = getParams()
   function showoauthcode() {
-    document.getElementById('code').innerHTML = getParams()
-    document.getElementById('hidecode').hidden = false
-    document.getElementById('time').hidden = false
-    setTimeout('hideauthcode()',10000)
+    if (localStorage.getItem("discord-code") == "") {
+      document.getElementById('code').innerHTML = getParams()
+      document.getElementById('hidecode').hidden = false
+      document.getElementById('time').hidden = false
+      setTimeout('hideauthcode()',10000)
+    } else {
+      document.getElementById("code").innerHTML = localStorage.getItem("discord-code")
+      document.getElementById("hidecode").hidden = false
+      document.getElementById('time').hidden = false
+      setTimeout('hideauthcode()',10000)
+    }
   }
   function hideauthcode() {
   document.getElementById('code').innerHTML = ""
