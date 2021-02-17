@@ -1,58 +1,40 @@
-<html lang="EN">
-<div style="align-items: center; text-align: center; font-family: sans-serif;">
-<h2 style="font-family: 'Langar', cursive;color:blue; align: center;">project storytime</h2>
-<p style="color: black; font-family: sans-serif;">stories are for the world. the world is for <em>everyone</em>.</p>
-<button type="button" onclick="window.location.href = '/storytime/'">stories</button>
-<button type="button" onclick="alert('storytime is made by aragon press')">who makes storytime?</button>
-<button type="button" id="signin" onclick="authuser()">sign me in</button>
-</div>
+<!DOCTYPE html>
+<html lang="EN" id="MAINHTML" contenteditable style="text-align: center; align-items: center;" spellcheck="false">
 <head>
-<meta name="storytime" content="free stories for all">
+<meta name="description" content="free stories for all">
 <title>storytime</title>
+  <link rel='icon' href='/favicon.ico' type='image/x-icon'/>
+  <div id="searchterm" hidden style="text-align: center; align-items: center; width: 100%; font-family: sans-serif;">
+    <h1>Nope</h1>
+    <p>We couldn't search for that because search doesn't work yet.<p>
+    <button onclick="hidenosearch()">Hide this message</button>
+  </div>
 </head>
+  <body id="mainbody">
+<div style="align-items: center; text-align: center; font-family: sans-serif;">
+<h2 style="font-family: 'Langar', cursive;color:blue; text-align: center;">project storytime</h2>
+<div style="color: black; font-family: sans-serif;"><p>stories are for the world. the world is for <b><em>everyone</em></b>.</div>
+<button type="button" onclick="window.location.href = '/storytime/'">stories</button>
+<button type="button" onclick="qt.say('storytime is made by aragon press')">who makes storytime?</button>
+</div>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <!--<a href="mailto:kaiete@aragon-press.com">send in your masterpiece</a>-->
 <button hidden type="button" onclick="window.location.href = 'http://afraid.org'"></button>
-<!--put all code above here-->
-<footer>
+<footer style="text-align: center; align-items: center; position: absolute; bottom: 5px; font-family: sans-serif; width: 100%;">
+	<p>you can edit this page! add what you want. it will only change for you. have fun tweaking!</p>
 </footer>
-<script>
-  function redirectap() {
-    setTimeout("window.location.href = 'https://aragon-press.com'",3000)
-  }
-function authuser() {
-var user = prompt("username:")
-var userok = prompt(user,"true/false")
-if (userok == "true") {
-document.getElementById("signin").disabled = true
-setTimeout('alert("done")',200)
-}
-if (userok == "false") {
-  var user = ""
-  alert("username removed from client info")
-  document.getElementById("signin").disabled = false
-}
-}
-var userok = "false"
-</script>
-<link rel='icon' href='/favicon.ico' type='image/x-icon'/ >
-<div id="wrapper">
-		<div class="adBar">
-			&nbsp;
-		</div>
-	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			setTimeout(function() {
-				if (document.getElementById("wrapper").offsetHeight) {
-				} else {
-					alert('Please disable your ad blocker. StoryTime never, ever shows ads, but others do. Often their only source of income is through ads, and that is the only way they can keep creating their amazing free services.')
-				}
-			}, 1000)
-		});
-	</script>
+	  <script src="/homepage.js"></script>
+    <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+  </body>
 </html>
+<link rel="cool thing that I use lots" href="https://afraid.org">
+<style>
+  body {
+    background-image: url("https://projectstorytime.vercel.app/login-background.jpeg")
+  }
+</style>
+<script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
 

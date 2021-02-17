@@ -1,0 +1,32 @@
+
+<body style="text-align: center; align-items: center; font-family: sans-serif;">
+  <script>
+  function getParams() {
+    const params = new URLSearchParams(window.location.search)
+    const editedparams = params.toString().replace("code=","")
+    return editedparams
+  }
+  var logincode
+  function showoauthcode() {
+    logincode = "https://github.com/login/oauth/access_token/?client_id=" + "e50b39933f8e05fad9b3" + "&client_secret=" + "e0b1341906bc04242a5e2b6ceab3b5fe1f92a95f&code=" + getParams()
+    document.getElementById('code').innerHTML = "<a href='" + logincode +"' target='_blank'>Continue</a>"
+    document.getElementById('hidecode').hidden = false
+    document.getElementById('time').hidden = false
+    setTimeout('hideauthcode()',10000)
+    
+  }
+  function hideauthcode() {
+  document.getElementById('code').innerHTML = ""
+  document.getElementById('hidecode').hidden = true
+    document.getElementById('time').hidden = true
+  }
+</script>
+  <h1>All done and dusted!</h1>
+  <p>You're signed in.</p>
+  <p>Tap <button type="button" onclick="showoauthcode()">here</button> for the login file. Look in the file for the 8 number long code, and enter it <a href="https://github.com/login/device/">here</a>.</p>
+  <p id='code'></p>
+  <button hidden onclick="hideauthcode()" id="hidecode">
+  Hide code
+  </button>
+  <p id="time" hidden>the code will be hidden automatically in 10 seconds</p>
+</body>

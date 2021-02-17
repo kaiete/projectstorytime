@@ -1,0 +1,31 @@
+<!doctype html>
+<body>
+  <script>
+function authuser(oauthtype) {
+  if (oauthtype == 'discord') {
+    window.location.href = "/secure/discord/"
+  } else if (oauthtype == 'github') {
+    window.location.href = "/secure/github/"
+  }
+} 
+</script>
+<div class="main">
+  <h1>StoryTime login</h1>
+  <button type="button" onclick="authuser('discord')">Sign me in using Discord!</button>
+  <button onclick="authuser('github')" disabled><abbr title="not supported yet, stay tuned!">Sign me in with GitHub!</abbr></button>
+</div>
+<style>
+  .main {
+    font-family: sans-serif;
+    color: black;
+    align-items: center;
+    text-align: center;
+    padding-top: 50;
+  }
+  body {
+    width: 95%;
+    height: 90%;
+    background-image: url("https://projectstorytime.vercel.app/login-background.jpeg");
+  }
+</style>
+

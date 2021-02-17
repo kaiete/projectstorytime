@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/b4r1h5j7xwg1028y95dqnwasfi1svnjlzysty2idhnnexyc3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    if (window.location.toString().includes("storytime.k.vu")) {
+      document.getElementById("body").innerHTML = "<a href='https://projectstorytime.vercel.app/submit/' target='_blank'>Please tap here</a>"
+    }
+  </script>
+</head>
+<body id="body">
+<form method="GET" action="https://projectstorytime.vercel.app/api/submitstory/">
+  <textarea name="story" required>
+  </textarea>
+  <label for="authorURL" style="font-family: Helvetica, sans-serif;">Your website: </label><input type="url" name="authorURL" id="authorURL">
+  <br>
+  <label for="name" style="font-family: Helvetica, sans-serif;">Your nickname: </label><input name="name">
+  <br>
+  <input type="checkbox" name="agree_seen" required><label for="agree_seen" style="font-family: sans-serif">I agree storytime can see this story</label>
+  <br>
+  <input type="checkbox" name="published"><label for="published" style="font-family: sans-serif">I don't mind my story being published on the website</label>
+  <br>
+  <input type="submit">
+</form>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+    });
+  </script>
+</body>
+</html>

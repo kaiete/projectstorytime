@@ -1,5 +1,9 @@
-### projectstorytime
+<h1 style="width: 100%; text-align: center;">project storytime</h1>
+
 > Stories. **For free**. *For all*. ***Forever***.
+
+Useful links:
+* [Terms](https://github.com/kaiete/projectstorytime/blob/main/terms/fullterms.md)
 
 just look at the code, it's pretty simple.
 

@@ -1,0 +1,15 @@
+<script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+<a id="mailanchor"></a>
+<script>
+  const params = qt.params()
+  const confirmed = confirm("Are you sure you want to submit your story?")
+  if (confirmed) {
+    qt.say("Please click the link below, and send the email.")
+    var moddedparams = params.toString().replace("&","and")
+    mail_link = document.getElementById("mailanchor")
+    mail_link.href = "mailto:storytime@aragon-press.com?subject=Story suggestion&body=" + moddedparams
+    mail_link.innerHTML = "Click me"
+  } else {
+    alert("Cancelled - you can close this tab.")
+  }
+</script>
