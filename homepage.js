@@ -1,4 +1,6 @@
-
+function hidenosearch() {
+  document.getElementById("searchterm").hidden = true
+}
 var down = false
 if (down) {
   window.location.replace("https://aragon-press.com/nope/")
