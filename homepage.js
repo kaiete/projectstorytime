@@ -1,5 +1,5 @@
 
-const down = false
+var down = false
 if (down) {
   window.location.replace("https://aragon-press.com/nope/")
 }
