@@ -56,6 +56,8 @@ function authuser() {
     if (userok.toString() == "true") {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
+      localStorage.setItem("user-key",Math.random())
+      prompt("This is your user key, used when intergrating with Zapier. Don't share it.",localStorage.getItem("user-key"))
       alert("signed in")
     } else {
       delete user
