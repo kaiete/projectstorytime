@@ -73,4 +73,3 @@ document.getElementById("searchterm").hidden = true
 function hidenosearch() {
   document.getElementById("searchterm").hidden = true
 }
-
