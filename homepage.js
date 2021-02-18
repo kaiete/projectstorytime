@@ -48,9 +48,18 @@ var qt = {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
+  if (document.cookie.includes("signedin=true") == false) {
 var user = qt.ask("username:") 
-var userok = prompt("Continue as " + user + "? Type true or false") 
-qt.if(userok, document.getElementById("signin").disabled = true;setTimeout('alert("done")',200), delete user;alert("username removed from client info");document.getElementById("signin").disabled = false)
+var userok = prompt("Continue as " + user + "? Type true or false")
+if (userok.toString() == "true") {
+  document.cookie = "signedin=true"
+  localStorage.setItem("username",user)
+  alert("signed in")
+} else {
+  delete user
+  delete userok
+  alert("info deleted")
+}
 }
 const parameters = qt.params()
 var searchterm = parameters.toString().replace("s=","") 
