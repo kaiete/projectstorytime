@@ -61,6 +61,8 @@ function authuser() {
       delete user
       delete userok
       alert("info deleted")
+    }else{
+      alert("no")
     }
   }
   const parameters = qt.params()
