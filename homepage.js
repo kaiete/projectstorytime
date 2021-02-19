@@ -1,3 +1,4 @@
+console.log("%cBe careful!\n%cDangerous territory below. Never paste or type anything here unless you understand what it will do - it can stop your StoryTime working!","color: red; font-size: 3em;","color: red; font-size: 1em;")
 function hidenosearch() {
   document.getElementById("searchterm").hidden = true
 }
