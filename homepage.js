@@ -66,17 +66,4 @@ function authuser() {
       alert("info deleted")
     }
   }
-  const parameters = qt.params()
-  var searchterm = parameters.toString().replace("s=", "")
-  var search
-  if (parameters.replace("s=", "") == "") {search = true} else {search = false}
-  if (search) {
-    document.getElementById("searchterm").hidden = false
-  } else {
-    document.getElementById("searchterm").hidden = true
-  }
-
-  function hidenosearch() {
-    document.getElementById("searchterm").hidden = true
-  }
 }
