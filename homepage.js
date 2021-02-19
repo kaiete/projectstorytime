@@ -65,5 +65,6 @@ function authuser() {
       delete userok
       alert("info deleted")
     }
-  }
+  } else {
+    alert("You're already signed in.\nTo sign out, close this message, tap the padlock / warning sign, 'Cookies', 'projectstorytime.vercel.app' (double tap), 'cookies' (double tap), 'signedin' then delete.")
 }
