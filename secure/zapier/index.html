@@ -1,0 +1,10 @@
+<script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+<script>
+  const params = qt.params()
+  const user_key = params.toString().replace("User-key=","")
+  if (user_key == localStorage.getItem("user-key")) {
+    window.history.back()
+  } else {
+    alert("Make sure you've copied the right user key.")
+  }
+</script>
