@@ -57,9 +57,9 @@ function authuser() {
     if (userok.toString() == "true") {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
-      localStorage.setItem("user-key",Math.random())
-      prompt("This is your user key. /n Don't share it.",localStorage.getItem("user-key"))
+      localStorage.setItem("session-key",Math.random())
       alert("signed in")
+      location.reload()
     } else {
       delete user
       delete userok
@@ -73,6 +73,7 @@ function authuser() {
       localStorage.removeItem("user-key")
       document.cookie = "signedin=false"
       alert("OK, you're now signed out.")
+      location.reload()
     } else {
       alert("OK, sign-out cancelled.")
     }
