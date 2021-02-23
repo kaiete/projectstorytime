@@ -119,11 +119,14 @@
 </div>
 		<script>
 			var headerElem = document.getElementById("header")
-			if (document.cookie.toString().includes("signedin=true") == true) {
-				headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
-			} else {
-				headerElem.innerHTML = "project storytime"
+			function updateHeader() {
+			  if (document.cookie.toString().includes("signedin=true") == true) {
+			  	headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
+			  } else {
+				  headerElem.innerHTML = "project storytime"
+		  	}
 			}
+			updateHeader()
 		</script>
   </body>
 </html>
