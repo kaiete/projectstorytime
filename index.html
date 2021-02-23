@@ -11,7 +11,7 @@
 
   <body id="mainbody">
     <div style="align-items: center; text-align: center; font-family: sans-serif;">
-      <h2 style="font-family: 'Langar', cursive;color:blue; text-align: center;">project storytime</h2>
+      <h2 style="font-family: 'Langar', cursive;color:blue; text-align: center;" id="header">project storytime</h2>
       <div style="color: black; font-family: sans-serif;">
         <p>stories are for the world. the world is for <b><em>everyone</em></b>.</p>
       </div>
@@ -122,5 +122,13 @@
     <p style="color: gray; font-family: sans-serif; font-style: italic;">This is from w3schools.com</p>
   </form>
 </div>
+		<script>
+			var headerElem = document.getElementById("header")
+			if (document.cookie.toString().includes("signedin=true") == true) {
+				headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
+			} else {
+				headerElem.innerHTML = headerElem.innerHTML
+			}
+		</script>
   </body>
 </html>
