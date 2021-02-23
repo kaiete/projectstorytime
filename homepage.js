@@ -58,7 +58,7 @@ function authuser() {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
       localStorage.setItem("user-key",Math.random())
-      prompt("This is your user key, used when intergrating with Zapier. Don't share it.",localStorage.getItem("user-key"))
+      prompt("This is your user key./nDon't share it.",localStorage.getItem("user-key"))
       alert("signed in")
     } else {
       delete user
@@ -118,4 +118,9 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+}
+/* this bit is for emergencies
+do not remove plz */
+if (true == false) {
+  alert("OH NO")
 }
