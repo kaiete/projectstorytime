@@ -58,7 +58,7 @@ function authuser() {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
       localStorage.setItem("user-key",Math.random())
-      prompt("This is your user key./nDon't share it.",localStorage.getItem("user-key"))
+      prompt("This is your user key. /n Don't share it.",localStorage.getItem("user-key"))
       alert("signed in")
     } else {
       delete user
@@ -66,8 +66,16 @@ function authuser() {
       alert("info deleted")
     }
   } else {
-    alert("You're already signed in.\nTo sign out, close this message, tap the padlock / warning sign, 'Cookies', 'projectstorytime.vercel.app' (double tap), 'cookies' (double tap), 'signedin' then delete.")
-}
+    alert("You're already signed in.")
+    let signout = confirm("Do you want to sign out?")
+    if (signout == true) {
+      localStorage.removeItem("username")
+      localStorage.removeItem("user-key")
+      document.cookie = ""
+    } else {
+      alert("OK, sign-out cancelled.")
+    }
+  }
 }
 dragElement(document.getElementById("movable"));
 
