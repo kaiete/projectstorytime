@@ -71,7 +71,8 @@ function authuser() {
     if (signout == true) {
       localStorage.removeItem("username")
       localStorage.removeItem("user-key")
-      document.cookie = ""
+      document.cookie = "signedin=false"
+      alert("OK, you're now signed out.")
     } else {
       alert("OK, sign-out cancelled.")
     }
