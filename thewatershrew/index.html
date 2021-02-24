@@ -3,8 +3,13 @@
 <head>
   <style>
     *:fullscreen, *:-webkit-full-screen, *:-moz-full-screen {
-    background-color: white;
-}
+      background-color: white;
+    }
+    body {
+      @font-face {
+        font-family: dyslexiaFriendly;
+        src: url(https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Regular.woff);
+      }
   </style>
 <script>
 var body
@@ -16,7 +21,7 @@ body.requestFullscreen()
 <div style="text-align:center; align-items: center;">
   <button onclick="full()">Full screen</button>
   <button onclick="document.getElementById('body').style = 'font-family: Helvetica, sans-serif;'">Sans serif</button>
-  <button onclick="document.getElementById('body').style = '@font-face {font-family: dyslexiaFriendly; src: url(https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Regular.woff)}; font-family: dyslexiaFriendly;'">Dyslexia friendly</button>
+  <button onclick="document.getElementById('body').style = 'font-family: dyslexiaFriendly;'">Dyslexia friendly</button>
 </div>
 </head>
 <body id="body" bgcolor="FFFFFF">
