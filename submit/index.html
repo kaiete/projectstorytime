@@ -9,7 +9,7 @@
   </textarea>
   <label for="authorURL" style="font-family: Helvetica, sans-serif;">Your website: </label><input type="url" name="authorURL" id="authorURL">
   <br>
-  <label for="name" style="font-family: Helvetica, sans-serif;">Your nickname: </label><input name="name">
+  <label for="name" style="font-family: Helvetica, sans-serif;">Your nickname: </label><input name="name" id="name"><p style="font-family: Ubuntu, system-ui, sans-serif; font-style: italic; color: gray;" hidden>Autofilled</p>
   <br>
   <input type="checkbox" name="agree_seen" required><label for="agree_seen" style="font-family: sans-serif">I agree storytime can see this story</label>
   <br>
@@ -21,6 +21,10 @@
     tinymce.init({
       selector: 'textarea',
     });
+    if (document.cookie.toString().includes("signedin=true")) {
+      document.getElementById("name").value = localStorage.getItem("username")
+      document.getElementById("labelautofill").hidden = false
+    }
   </script>
 </body>
 </html>
