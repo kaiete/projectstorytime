@@ -1,6 +1,0 @@
-{
-  "comments": {
-    "what-is-this-file": "it is a file that tells vercel important info, such as /api returning 404 - not a directory"
-  }
-  "routes": [{ "src": "/api", "status": 403, "dest": "/404.html" }]
-}
