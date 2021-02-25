@@ -23,6 +23,7 @@
     });
     if (document.cookie.toString().includes("signedin=true")) {
       document.getElementById("name").value = localStorage.getItem("username")
+      document.getElementById("name").disabled = true
       document.getElementById("labelautofill").hidden = false
     }
   </script>
