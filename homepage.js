@@ -82,6 +82,6 @@ function authuser() {
 var trueish
 /* this bit is for emergencies
 do not remove plz */
-if (trueish == falseish) {
+if (trueish == 'falseish') {
   alert("OH NO")
 }
