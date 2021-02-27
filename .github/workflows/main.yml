@@ -25,6 +25,8 @@ jobs:
       - name: add to forks.txt file 
         run: |
           currentdate=$(date)
+          git config user.email 'cayopdxkvgzgjmhghq@upived.online'
+          git config user.name 'mona-lisa-octocat-octopus-feline'
           echo "this repo was forked at $currentdate" >> forks.txt
           git add .
           git commit -m 'Add to forks.txt'
