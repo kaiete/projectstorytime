@@ -66,7 +66,6 @@ function authuser() {
       alert("info deleted")
     }
   } else {
-    alert("You're already signed in.")
     let signout = confirm("Do you want to sign out?")
     if (signout == true) {
       localStorage.removeItem("username")
