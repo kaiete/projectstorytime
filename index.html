@@ -19,7 +19,7 @@
       <button type="button" onclick="qt.say('storytime is made by aragon press')" accesskey="?">who makes storytime?</button>
       <button onclick="authuser()" accesskey="@" hidden><abbr title="This feature uses cookies to keep you signed in. No cookies = no sign-in">Sign me in - unavailable</abbr></button>
 	    <form action="javascript:authuser()" method="get">
-				<input type="submit" value="Sign in">
+				<input type="submit" value="Sign in" id="signinbutton">
 			</form>
     </div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -54,8 +54,10 @@
 			function updateHeader() {
 			  if (document.cookie.toString().includes("signedin=true") == true) {
 			  	headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
+				  document.getElementById("signinbutton").value = "Sign out"
 			  } else {
 				  headerElem.innerHTML = "project storytime"
+				  document.getElementById("signinbutton").value = "Sign in"
 		  	}
 			}
 			updateHeader()
