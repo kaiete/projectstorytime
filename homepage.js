@@ -53,8 +53,8 @@ var qt = {
 function authuser() {
   if (document.cookie.toString().includes("signedin=true") == false) {
     var user = qt.ask("username:")
-    var userok = prompt("Continue as " + user + "? Type true or false")
-    if (userok.toString() == "true") {
+    var userok = confirm("Continue as " + user + "?")
+    if (userok == true) {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
       localStorage.setItem("session-key",Math.random())
