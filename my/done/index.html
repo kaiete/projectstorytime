@@ -7,7 +7,7 @@
   <body>
     <script>
       var favstory = new URLSearchParams(window.location.search)
-      favstory = favstory.replace("favouritebook=","")
+      favstory = favstory.toString().replace("favouritebook=","")
       localStorage.setItem("favstory",favstory)
       window.location.href = "https://storytime.k.vu"
     </script>
