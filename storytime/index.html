@@ -6,6 +6,7 @@
   </head>
   <body>
 <ul>
+  <li><button type="button" onclick="goToFavstory()">Favourite story</button></li>
   <li><button type="button" onclick="window.location.href = '/thewatershrew'">the water shrew</button>*</li>
   <li><button type="button" onclick="window.location.href = '/themousecalledjohn.txt'">The Mouse called John</button></li>
   <li><button type="button" onclick="window.location.href = '/bobous-books/1'">Bobous Book 1</button></li>
@@ -23,5 +24,19 @@
   }
 </style>
 <a href="/LICENSE">all stories here are under this license</a>
+    <script>
+      if (localStorage.getItem("favstory") != null) {
+        document.getElementById("favstory").hidden = false
+      }
+      function goToFavstory() {
+        let favstory = localStorage.getItem("favstory")
+        if (favstory == "thewatershrew") {
+          window.location.href="https://storytime.k.vu/thewatershrew"
+        } else if (favstory == "tmcj") {
+          window.location.href="https://storytime.k.vu/themousecalledjohn.txt"
+        } else {
+          alert("Not set.")
+        }
+    </script>
   </body>
 </html>
