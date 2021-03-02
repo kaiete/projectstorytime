@@ -89,6 +89,7 @@ function manauthuser() {
   } else {
     alert("cancelled.")
   }
+}
 var trueish
 /* this bit is for emergencies
 do not remove plz */
