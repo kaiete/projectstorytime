@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>My StoryTime | Auth</h1>
+    <p>Signing you in...</p>
+    <span class="note-1"><p>You will be redirected shortly.</p></span>
+    <span id="no-auth"></span>
+    <style>
+      body {
+        font-family: Helvetica, Ubuntu, sans-serif;
+        text-align: center;
+      }
+      .note-1 {
+        font-style: italic;
+        color: gray;
+      }
+    </style>
+    <script>
+      if (document.cookie.includes("signedin=true")) {
+        var redirectUri = "https://my-storytime.vercel.app/signed-in/?username=" + localStorage.getItem("username")
+        window.location.replace(redirectUri)
+      } else {
+        document.getElementById("no-auth").innerHTML = 'You must sign in before you can use My StoryTime. Please go back to the <a href="/">homepage</a>.'
+      }
+  </body>
+</html>
