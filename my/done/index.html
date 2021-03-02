@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My StoryTime | Done</title>
+  </head>
+  <body>
+    <script>
+      var favstory = new URLSearchParams(window.location.search)
+      favstory = favstory.replace("favouritebook=","")
+      localStorage.setItem("favstory",favstory)
+      window.location.href = "https://storytime.k.vu"
+    </script>
+  </body>
+</html>
