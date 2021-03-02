@@ -79,6 +79,16 @@ function authuser() {
     }
   }
 }
+function manauthuser() {
+  var ifsure = confirm("Are you sure you want to use manual signin? Do not use this unless you are exactly sure you know what you are doing, it can cause errors if misspelled!")
+  if (ifsure) {
+    localStorage.setItem("username",prompt("username:"))
+    localStorage.setItem("favstory",prompt("favourite story code:\nNOT story name\nFor example, bb1, tmcj, thewatershrew"))
+    localStorage.setItem("user-key",prompt("user key:"))
+    document.cookie = "signedin=" + confirm("Appear signedin?\nPressing Cancel will render all signedin features unusable.")
+  } else {
+    alert("cancelled.")
+  }
 var trueish
 /* this bit is for emergencies
 do not remove plz */
