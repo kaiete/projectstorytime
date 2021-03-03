@@ -6,9 +6,17 @@
   </head>
   <body>
     <script>
-      var favstory = new URLSearchParams(window.location.search)
-      favstory = favstory.toString().replace("favouritebook=","")
-      localStorage.setItem("favstory",favstory)
+      var options = new URLSearchParams(window.location.search)
+      if (options.includes("favouritebook=bb1")) {
+        localStorage.setItem("favstory","bb1")
+      } else if (options.includes("favouritebook=thewatershrew")) {
+        localStorage.setItem("favstory","thewatershrew")
+      } else if (options.includes("favouritebook=tmcj")) {
+        localStorage.setItem("favstory","tmcj")
+      }
+      if (options.includes("editbutton=true")) {
+        localStorage.setItem("editbutton",true)
+      }
       window.location.href = "https://storytime.k.vu"
     </script>
   </body>
