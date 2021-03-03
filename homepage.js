@@ -90,9 +90,15 @@ function manauthuser() {
     alert("cancelled.")
   }
 }
-var trueish
+// Handling editbutton
+if (localStorage.getItem("editbutton")) {
+  document.getElementById("editbutton").hidden = false
+} else {
+  document.getElementById("editbutton").hidden = true
+}
 /* this bit is for emergencies
 do not remove plz */
+var trueish
 if (trueish == 'falseish') {
   alert("OH NO")
 }
