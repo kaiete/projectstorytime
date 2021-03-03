@@ -103,3 +103,4 @@ var trueish
 if (trueish == 'falseish') {
   alert("OH NO")
 }
+console.log("According to JavaScript, Infinity - Infinity = NaN, while NaN is not Infinity - Infinity.")
