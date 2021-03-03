@@ -91,7 +91,7 @@ function manauthuser() {
   }
 }
 // Handling editbutton
-if (localStorage.getItem("editbutton")) {
+if (localStorage.getItem("editbutton") == "true") {
   document.getElementById("editbutton").hidden = false
 } else {
   document.getElementById("editbutton").hidden = true
