@@ -71,6 +71,7 @@ function authuser() {
       localStorage.removeItem("username")
       localStorage.removeItem("user-key")
       localStorage.removeItem("favstory")
+      localStorage.removeItem("editbutton")
       document.cookie = "signedin=false"
       alert("OK, you're now signed out.")
       location.reload()
