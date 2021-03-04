@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/4359c31a15.js" crossorigin="anonymous"></script>
+		<script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+    <script>
+      function dino() {
+        var dinoWindow = open()
+        dinoWindow.location.href = 'chrome://dino'
+        dinoWindow.alert("This only works on Chrome.")
+				var usingEdge = dinoWindow.confirm("Are you using Edge?")
+				if (usingEdge) {
+					dinoWindow.location.href = "edge://surf"
+			  }
+			}
+			location.href = qt.params.replace("=","")
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title id="title">StoryTime | redirecting...</title>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p id="youstillhere">Are you still here? <i class="fas fa-check" ondblclick="dino()" onclick="alert('nope')"></i> (double-click the tick icon, only works on Chromeium-based browsers)</p>
+	</body>
+</html>
