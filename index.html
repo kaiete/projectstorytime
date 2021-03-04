@@ -24,7 +24,7 @@
 	    <form action="javascript:authuser()" method="get">
 				<input type="submit" value="Sign in" id="signinbutton">
 			</form>
-			<button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'">Edit</button>
+			<button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'" onclick="void(0)">Edit</button>
     </div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
@@ -42,24 +42,12 @@
   }
   #header-background {
     background-color: black;
-    opacity: 30%;
     border-radius: 19px;
   }
 </style>
 <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
 <script src="homepage.js"></script>
-    <div class="chat-popup" id="myForm" hidden>
-  <form action="https://formspree.io/f/mqkgojyz" class="form-container" method="POST">
-    <h1>Help</h1>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message..." name="msg" required></textarea>
-
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    <p style="color: gray; font-family: sans-serif; font-style: italic;">This is from w3schools.com</p>
-  </form>
-</div>
 		<script>
 			var headerElem = document.getElementById("header")
 			function updateHeader() {
