@@ -59,6 +59,10 @@ function authuser() {
       localStorage.setItem("username", user)
       localStorage.setItem("session-key",Math.random())
       alert("signed in")
+      var params = qt.params()
+      if (location.toString().includes("mysignin")) {
+        location.href = "https://storytime.k.vu/my/auth"
+      }
       location.reload()
     } else {
       delete user
