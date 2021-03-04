@@ -23,7 +23,7 @@
         var redirectUri = "https://my-storytime.vercel.app/signed-in/?username=" + localStorage.getItem("username")
         window.location.replace(redirectUri)
       } else {
-        document.getElementById("no-auth").innerHTML = 'You must sign in before you can use My StoryTime. Please go back to the <a href="/">homepage</a>.'
+        document.getElementById("no-auth").innerHTML = 'You must sign in before you can use My StoryTime. Please go back to the <a href="/#mysignin">homepage</a>.'
       }
     </script>
   </body>
