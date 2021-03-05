@@ -18,10 +18,11 @@
   <br>
   <input type="checkbox" name="published"><label for="published" style="font-family: sans-serif">I don't mind my story being published on the website</label>
   <br>
-  <div class="frc-captcha" data-sitekey="A10A78S7B0R8941ELIDJD4STJ2SV2IHKDR713UL15EC62EUOMD5JO0KN9L"></div>
-  <br>
   <input type="submit">
 </form>
+  <form action="https://friendlycaptcha.com/api/v1/siteverify" method="post">
+    <div class="frc-captcha" data-sitekey="A10A78S7B0R8941ELIDJD4STJ2SV2IHKDR713UL15EC62EUOMD5JO0KN9L"></div>
+  </form>
   <script>
     tinymce.init({
       selector: 'textarea',
