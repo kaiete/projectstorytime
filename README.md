@@ -1,3 +1,4 @@
+
 <body ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/README.md'">
 <h1 style="width: 100%; text-align: center;">project storytime</h1>
 
@@ -18,4 +19,6 @@ have a suggestion? we'd love to hear about it. just fork this repo, add somethin
 
 If you add something to the beta branch, create a pull request and it is merged, please DO NOT delete the beta branch.
 
-<span>Links: <b onclick="location.href = 'https://github.com/kaiete/textwrite'">TextWrite</b> [Source code](https://github.com/kaiete/projectstorytime/files/6086131/projectstorytime-main.zip)
+<span>Links: <b onclick="location.href = 'https://github.com/kaiete/textwrite'">TextWrite</b> [Source code](https://github.com/kaiete/projectstorytime/files/6086131/projectstorytime-main.zip)</span>
+
+Can you help StoryTime be infinitely more accessible? contact us if you'd like to help us with accessibility
