@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>StoryTime captcha</title>
+    <script>
+      function captcha1() {
+        if (document.getElementById("captcha1").value == "a") {
+          return true
+        } else {
+          return false
+        }
+      }
+      function captcha2() {
+        if (document.getElementById("captcha2").value == "robot") {
+          return true
+        } else {
+          return false
+        }
+      }
+      var captcha1good
+      var captcha2good
+      setInterval("if (captcha1() == true) {captcha1good = true}",100)
+      setInterval("if (captcha2() == true) {captcha2good = true}",100)
+      setInterval("if (captcha1good == true && captcha2good == true) {window.location.replace('https://storytime.k.vu/submit')}")
+    </script>
+  </head>
+  <body>
+    <h1>Oops!</h1>
+    <p>StoryTime's for all, but robots can't access some parts of the website, to avoid spam.<br>So can you solve this captcha?<br>Or are you a robot?</p>
+    <p>Solve this anagram: tchapcs, and enter the missing letter in the first box below.<br>Then, solve this anagram: broto, and enter it in the second box below.
+      <input id="captcha1" type="text" onsubmit="captcha1()">
+      <input id="captcha2" type="text" onsubmit="captcha2()">
+  </body>
+</html>
