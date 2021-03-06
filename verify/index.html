@@ -18,11 +18,15 @@
           return false
         }
       }
+      function finishCaptcha() {
+        sessionStorage.setItem("verified",true)
+        location.replace("https://storytime.k.vu/submit")
+      }
       var captcha1good
       var captcha2good
       setInterval("if (captcha1() == true) {captcha1good = true}",100)
       setInterval("if (captcha2() == true) {captcha2good = true}",100)
-      setInterval("if (captcha1good == true && captcha2good == true) {window.location.replace('https://storytime.k.vu/submit')}")
+      setInterval("if (captcha1good == true && captcha2good == true) {finishCaptcha()}")
     </script>
   </head>
   <body>
