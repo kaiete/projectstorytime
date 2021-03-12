@@ -8,7 +8,7 @@
 </head>
 <body id="body">
 <form method="POST" action="https://formspree.io/f/mleokaya">
-  <textarea name="story" required placeholder="Write away!" style="height: 10em;">
+  <textarea name="story" required placeholder="Write away!" style="height: 10em;" oninput="confirmleave(true)">
   </textarea>
   <label for="authorURL" style="font-family: Helvetica, sans-serif;">Your website: </label><input type="url" name="authorURL" id="authorURL">
   <br>
@@ -18,7 +18,7 @@
   <br>
   <input type="checkbox" name="published"><label for="published" style="font-family: sans-serif">I don't mind my story being published on the website</label>
   <br>
-  <input type="submit">
+  <input type="submit" onclick="confirmleave(false)">
 </form>
   <script>
     tinymce.init({
@@ -31,6 +31,15 @@
     }
     if (sessionStorage.getItem("verified") != "true") {
       window.location.replace("https://storytime.k.vu/verify")
+    }
+    function confirmleave(setting) {
+      if (setting == true) {
+        window.onbeforeunload = function() {
+          return true
+        }
+      } else if (setting == false) {
+        window.onbeforeunload = null
+      }
     }
   </script>
 </body>
