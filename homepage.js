@@ -108,3 +108,10 @@ if (trueish == 'falseish') {
   alert("OH NO")
 }
 console.log("According to JavaScript, Infinity - Infinity = NaN, while NaN is not Infinity - Infinity.")
+var status = new XMLHttpRequest()
+status.open("GET","https://storytime.k.vu/_info/status")
+status.send()
+if (status == "true") {
+} else {
+  window.location.replace("https://aragon-press.com/nope")
+}
