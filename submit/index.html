@@ -20,6 +20,24 @@
   <br>
   <input type="submit" onclick="confirmleave(false)">
 </form>
+  <style>
+    input {
+border: none;
+outline: none;
+background-color: white;
+color: gray;
+transition: all .35s ease-in-out;
+width: 1in;
+}
+input:hover {
+color: gray;
+background-color: lightgray;
+width: 1.5in;
+}
+::placeholder, input:hover {
+color: black;
+}
+  </style>
   <script>
     tinymce.init({
       selector: 'textarea',
