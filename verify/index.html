@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>StoryTime captcha</title>
+    <link rel="stylesheet" href="https://use.typekit.net/fdg2lzh.css">
     <script>
       function captcha1() {
         if (document.getElementById("captcha1").value == "a") {
@@ -35,5 +36,26 @@
     <p>Solve this anagram: hcpact, and enter the missing letter in the first box below.<br>Then, solve this anagram: broto, and enter it in the second box below.
       <input id="captcha1" type="text" onsubmit="captcha1()">
       <input id="captcha2" type="text" onsubmit="captcha2()">
+      <style>
+        input {
+          border: none;
+          outline: none;
+          background-color: white;
+          color: gray;
+          transition: all .35s ease-in-out;
+          width: 1in;
+        }
+        input:hover {
+          color: gray;
+          background-color: lightgray;
+          width: 1.5in;
+        }
+        ::placeholder, input:hover {
+          color: black;
+        }
+        body {
+          font-family: roboto, sans-serif;
+        }
+      </style>
   </body>
 </html>
