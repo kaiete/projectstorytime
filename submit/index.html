@@ -1,26 +1,65 @@
 <!doctype html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="https://cdn.tiny.cloud/1/b4r1h5j7xwg1028y95dqnwasfi1svnjlzysty2idhnnexyc3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script type="module" src="https://unpkg.com/friendly-challenge@0.8.0/widget.module.min.js" async defer></script>
+  <script nomodule src="https://unpkg.com/friendly-challenge@0.8.0/widget.min.js" async defer></script>
+  <title>StoryTime | Submit</title>
 </head>
 <body id="body">
 <form method="POST" action="https://formspree.io/f/mleokaya">
-  <textarea name="story" required>
+  <textarea name="story" required placeholder="Write away!" style="height: 10em;" oninput="confirmleave(true)">
   </textarea>
   <label for="authorURL" style="font-family: Helvetica, sans-serif;">Your website: </label><input type="url" name="authorURL" id="authorURL">
   <br>
-  <label for="name" style="font-family: Helvetica, sans-serif;">Your nickname: </label><input name="name">
+  <label for="name" style="font-family: Helvetica, sans-serif;">Your nickname: </label><input name="name" id="name"><p style="font-family: Ubuntu, system-ui, sans-serif; font-style: italic; color: gray;" hidden id="labelautofill">Autofilled - sign out to use a different nickname</p>
   <br>
   <input type="checkbox" name="agree_seen" required><label for="agree_seen" style="font-family: sans-serif">I agree storytime can see this story</label>
   <br>
   <input type="checkbox" name="published"><label for="published" style="font-family: sans-serif">I don't mind my story being published on the website</label>
   <br>
-  <input type="submit">
+  <input type="submit" onclick="confirmleave(false)">
 </form>
+  <style>
+    input {
+border: none;
+outline: none;
+background-color: white;
+color: gray;
+transition: all .35s ease-in-out;
+width: 1in;
+}
+input:hover {
+color: gray;
+background-color: lightgray;
+width: 2in;
+}
+::placeholder, input:hover {
+color: black;
+}
+  </style>
   <script>
     tinymce.init({
       selector: 'textarea',
     });
+    if (document.cookie.toString().includes("signedin=true")) {
+      document.getElementById("name").value = localStorage.getItem("username")
+      document.getElementById("name").disabled = true
+      document.getElementById("labelautofill").hidden = false
+    }
+    if (sessionStorage.getItem("verified") != "true") {
+      window.location.replace("https://storytime.k.vu/verify")
+    }
+    function confirmleave(setting) {
+      if (setting == true) {
+        window.onbeforeunload = function() {
+          return true
+        }
+      } else if (setting == false) {
+        window.onbeforeunload = null
+      }
+    }
   </script>
 </body>
 </html>

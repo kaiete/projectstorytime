@@ -1,8 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>storytime | stories</title>
+  </head>
+  <body>
 <ul>
-  <li><button type="button" onclick="window.location.href = '/thewatershrew/'">the water shrew</button></li>
-  <li><button type="button" onclick="window.location.href = '/themousecalledjohn.txt/'">The Mouse called John</button></li>
+  <li><button type="button" onclick="goToFavstory()">Favourite story</button></li>
+  <li><button type="button" onclick="window.location.href = '/thewatershrew'">the water shrew</button>*</li>
+  <li><button type="button" onclick="window.location.href = '/themousecalledjohn.txt'">The Mouse called John</button></li>
+  <li><button type="button" onclick="window.location.href = '/bobous-books/1'">Bobous Book 1</button></li>
 </ul>
-<p style="font-family: sans-serif">sorry, that's all for now. check back soon!</p>
+<p style="font-family: sans-serif">sorry, that's all for now. check back soon!
+<br>
+*Discontinued daily story - will no longer receive updates
+</p>
 <style>
   p {
     font-family: sans-serif;
@@ -11,4 +23,23 @@
     font-family: sans-serif;
   }
 </style>
-<a href="/LICENSE/">all stories here are under this license</a>
+<a href="/LICENSE">all stories here are under this license</a>
+    <script>
+      if (localStorage.getItem("favstory") != null) {
+        document.getElementById("favstory").hidden = false
+      }
+      function goToFavstory() {
+        let favstory = localStorage.getItem("favstory")
+        if (favstory == "thewatershrew") {
+          window.location.href="https://storytime.k.vu/thewatershrew"
+        } else if (favstory == "tmcj") {
+          window.location.href="https://storytime.k.vu/themousecalledjohn.txt"
+        } else if (favstory == "bb1") {
+          window.location.href="https://storytime.k.vu/bobous-books/1"
+        } else {
+          alert("Not set, to set go to StoryTime.k.vu/my")
+        }
+      }
+    </script>
+  </body>
+</html>

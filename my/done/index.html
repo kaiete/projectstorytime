@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My StoryTime | Done</title>
+  </head>
+  <body>
+    <script>
+      var options = new URLSearchParams(window.location.search)
+      if (options.toString().includes("favouritebook=bb1")) {
+        localStorage.setItem("favstory","bb1")
+      } else if (options.toString().includes("favouritebook=thewatershrew")) {
+        localStorage.setItem("favstory","thewatershrew")
+      } else if (options.toString().includes("favouritebook=tmcj")) {
+        localStorage.setItem("favstory","tmcj")
+      }
+      if (options.toString().includes("editbutton=true")) {
+        localStorage.setItem("editbutton",true)
+      }
+      window.location.href = "https://storytime.k.vu"
+    </script>
+  </body>
+</html>

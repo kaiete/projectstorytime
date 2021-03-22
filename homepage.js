@@ -51,71 +51,67 @@ var qt = {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
-  if (document.cookie.includes("signedin=true") == false) {
+  if (document.cookie.toString().includes("signedin=true") == false) {
     var user = qt.ask("username:")
-    var userok = prompt("Continue as " + user + "? Type true or false")
-    if (userok.toString() == "true") {
+    var userok = confirm("Continue as " + user + "?")
+    if (userok == true) {
       document.cookie = "signedin=true"
       localStorage.setItem("username", user)
-      localStorage.setItem("user-key",Math.random())
-      prompt("This is your user key, used when intergrating with Zapier. Don't share it.",localStorage.getItem("user-key"))
+      localStorage.setItem("session-key",Math.random())
       alert("signed in")
+      var params = qt.params()
+      if (location.toString().includes("mysignin")) {
+        location.href = "https://storytime.k.vu/my/auth"
+      }
+      location.reload()
     } else {
       delete user
       delete userok
       alert("info deleted")
     }
   } else {
-    alert("You're already signed in.\nTo sign out, close this message, tap the padlock / warning sign, 'Cookies', 'projectstorytime.vercel.app' (double tap), 'cookies' (double tap), 'signedin' then delete.")
+    let signout = confirm("Do you want to sign out?")
+    if (signout == true) {
+      localStorage.removeItem("username")
+      localStorage.removeItem("user-key")
+      localStorage.removeItem("favstory")
+      localStorage.removeItem("editbutton")
+      document.cookie = "signedin=false"
+      alert("OK, you're now signed out.")
+      location.reload()
+    } else {
+      alert("OK, sign-out cancelled.")
+    }
+  }
 }
-}
-dragElement(document.getElementById("movable"));
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+function manauthuser() {
+  var ifsure = confirm("Are you sure you want to use manual signin? Do not use this unless you are exactly sure you know what you are doing, it can cause errors if misspelled!")
+  if (ifsure) {
+    localStorage.setItem("username",prompt("username:"))
+    localStorage.setItem("favstory",prompt("favourite story code:\nNOT story name\nFor example, bb1, tmcj, thewatershrew"))
+    localStorage.setItem("user-key",prompt("user key:"))
+    document.cookie = "signedin=" + confirm("Appear signedin?\nPressing Cancel will render all signedin features unusable.")
   } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
+    alert("cancelled.")
   }
 }
-//////////////////////////////////
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+// Handling editbutton
+if (localStorage.getItem("editbutton") == "true") {
+  document.getElementById("editbutton").hidden = false
+} else {
+  document.getElementById("editbutton").hidden = true
 }
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+/* this bit is for emergencies
+do not remove plz */
+var trueish
+if (trueish == 'falseish') {
+  alert("OH NO")
+}
+console.log("According to JavaScript, Infinity - Infinity = NaN, while NaN is not Infinity - Infinity.")
+var status = new XMLHttpRequest
+status.open("GET","https://storytime.k.vu/_info/status")
+status.send()
+if (status == "true") {
+} else {
+  window.location.replace("https://aragon-press.com/nope")
 }

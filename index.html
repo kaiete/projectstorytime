@@ -6,18 +6,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>storytime</title>
     <link rel='icon' href='/favicon.ico' type='image/x-icon' />
-	  <link rel="cool thing that I use lots - even hosts storytime.k.vu" href="https://afraid.org">
+	  <link rel="stylesheet" href="https://use.typekit.net/fdg2lzh.css">
+	  <link rel='stylesheet' href='/style.css'/>
+	  <link rel="cool thing that I use lots - even hosts storytime.k.vu" href="https://freedns.afraid.org">
   </head>
 
   <body id="mainbody">
+	  <button hidden accesskey="m" onclick="manauthuser()"></button>
     <div style="align-items: center; text-align: center; font-family: sans-serif;">
-      <h2 style="font-family: 'Langar', cursive;color:blue; text-align: center;">project storytime</h2>
-      <div style="color: black; font-family: sans-serif;">
+	    <span id="header-background">
+      <h2 style="font-family: 'Langar', roboto, sans-serif;color:black; text-align: center;" id="header">project storytime</h2>
+	    </span>
+      <div style="color: black; font-family: roboto;">
         <p>stories are for the world. the world is for <b><em>everyone</em></b>.</p>
       </div>
-      <button type="button" onclick="window.location.href = '/storytime/'">stories</button>
-      <button type="button" onclick="qt.say('storytime is made by aragon press')">who makes storytime?</button>
-      <button onclick="authuser()"><abbr title="This feature uses cookies to keep you signed in. No cookies = no sign-in (or you can use Discord oauth instead, which uses no cookies.">Sign me in</abbr></button>
+      <button type="button" onclick="window.location.href = '/storytime/'" accesskey="s">stories</button>
+	    <br>
+      <button onclick="authuser()" accesskey="@" hidden><abbr title="This feature uses cookies to keep you signed in. No cookies = no sign-in">Sign me in - unavailable</abbr></button>
+	    <form action="javascript:authuser()" method="get">
+				<input type="submit" value="Sign in" id="signinbutton">
+			</form>
+			<button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'" onclick="void(0)">Edit</button>
     </div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
@@ -27,100 +36,33 @@
     <button hidden type="button" onclick="window.location.href = 'http://afraid.org'"></button>
     <script src="homepage.js"></script>
     <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
-  <footer contenteditable style="text-align: center; align-items: center; position: absolute; bottom: 5px; font-family: sans-serif; width: 50%; height: 3em; background-color: white; opacity: 60%; border-radius: 20px; align-self: center;" id="movable" draggable="true">
-    <div style="padding-left: 25%;">
-      <p contenteditable="true">you can drag this message! it will only change for you. have fun tweaking!</p>
-    </div>
-  </footer>
 <style>
   body {
-    background-image: url("https://projectstorytime.vercel.app/login-background.jpeg")
+    background-image: url("/wallpaper.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		font-family: roboto;
   }
-{box-sizing: border-box;}
-
-/* Button used to open the chat form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
-
-/* The popup chat - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-
-/* Full-width textarea */
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
-}
-
-/* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+  #header-background {
+    background-color: black;
+    border-radius: 19px;
+  }
 </style>
 <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
 <script src="homepage.js"></script>
-    <div class="chat-popup" id="myForm" hidden>
-  <form action="https://formspree.io/f/mqkgojyz" class="form-container" method="POST">
-    <h1>Help</h1>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message..." name="msg" required></textarea>
-
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    <p style="color: gray; font-family: sans-serif; font-style: italic;">This is from w3schools.com</p>
-  </form>
-</div>
+		<script>
+			var headerElem = document.getElementById("header")
+			function updateHeader() {
+			  if (document.cookie.toString().includes("signedin=true") == true) {
+			  	headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
+				  document.getElementById("signinbutton").value = "Sign out"
+			  } else {
+				  headerElem.innerHTML = "project storytime"
+				  document.getElementById("signinbutton").value = "Sign in"
+		  	}
+			}
+			updateHeader()
+		</script>
   </body>
 </html>

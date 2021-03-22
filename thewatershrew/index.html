@@ -3,8 +3,14 @@
 <head>
   <style>
     *:fullscreen, *:-webkit-full-screen, *:-moz-full-screen {
-    background-color: white;
-}
+      background-color: white;
+    }
+    body {
+      @font-face {
+        font-family: dyslexiaFriendly;
+        src: url(https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Regular.woff);
+      }
+    }
   </style>
 <script>
 var body
@@ -16,7 +22,10 @@ body.requestFullscreen()
 <div style="text-align:center; align-items: center;">
   <button onclick="full()">Full screen</button>
   <button onclick="document.getElementById('body').style = 'font-family: Helvetica, sans-serif;'">Sans serif</button>
+  <button onclick="document.getElementById('body').style = 'font-family: dyslexiaFriendly;'">Dyslexia friendly</button>
 </div>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Water Shrew | StoryTime</title>
 </head>
 <body id="body" bgcolor="FFFFFF">
 <h1 style="text-align:center">The Water Shrew with the Dual Purpose Car</h1>
@@ -158,6 +167,15 @@ He did not answer. I knew what he was thinking, though, and replied to the reser
 <p style="text-align:center">See you tomorrow with chapter 6!<br />
 Small print<br />
 If you like this story, and want to share it, share this link: aragonpress.tk/thewatershrew.txt<br />
-Typeset originally in Garamond. Edited in Office for Android 10, Grammarly and Word for Windows 10.a</p>
+Typeset originally in Garamond. Edited in Office for Android 10, Grammarly and Word for Windows 10.<br />
+Copyright &copy; Project Storytime | under MIT License <a href="https://storytime.k.vu/LICENSE">(here)</a></p>
+  <style>
+        body {
+      @font-face {
+        font-family: dyslexiaFriendly;
+        src: url(https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Regular.woff);
+      }
+    }
+  </style>
 </body>
 </html>
