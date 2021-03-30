@@ -26,6 +26,7 @@
 	    <form action="javascript:authuser()" method="get">
 				<input type="submit" value="Sign in" id="signinbutton">
 			</form>
+      <button onclick="subscribe()">Subscribe to updates</button>
 			<button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'" onclick="void(0)">Edit</button>
     </div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -63,6 +64,12 @@
 		  	}
 			}
 			updateHeader()
+      const subscribe = function() {
+        let sure = confirm("Are you sure? You can unsubscribe at any time.")
+        if (sure) {
+          location.href = "mailto:kaiete@aragon-press.com?body=I would like to sign up for StoryTime updates!"
+        }
+      }
 		</script>
   </body>
 </html>
