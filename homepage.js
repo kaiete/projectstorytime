@@ -43,8 +43,8 @@ var qt = {
       return false
       eval(toRunIfFalsy)
     } else {
+      console.error("QueryTools ran into an error, and this site might not work correctly. We recommend contacting the developer and telling them that QueryTools found an invalid qt.if statement.")
       return "QT-Error: returned neither true nor false"
-      console.log("QueryTools ran into an error, and this site might not work correctly. We recommend contacting the developer and telling them that QueryTools found an invalid qt.if statement.")
     }
   }
 }
@@ -108,7 +108,7 @@ if (trueish == 'falseish') {
   alert("OH NO")
 }
 console.log("According to JavaScript, Infinity - Infinity = NaN, while NaN is not Infinity - Infinity.")
-var status = new XMLHttpRequest
+var status = new XMLHttpRequest()
 status.open("GET","https://storytime.k.vu/_info/status")
 status.send()
 if (status == "true") {
