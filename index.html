@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="EN" id="MAINHTML" style="text-align: center; align-items: center;" spellcheck="false">
-
   <head>
     <meta name="description" content="free stories for all">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>storytime</title>
     <link rel='icon' href='/favicon.ico' type='image/x-icon' />
-	  <link rel="stylesheet" href="https://use.typekit.net/fdg2lzh.css">
-	  <link rel='stylesheet' href='/style.css'/>
-	  <link rel="cool thing that I use lots - even hosts storytime.k.vu" href="https://freedns.afraid.org">
+    <link rel="stylesheet" href="https://use.typekit.net/fdg2lzh.css">
+    <link rel='stylesheet' href='/style.css'/>
+    <link rel="cool thing that I use lots - even hosts storytime.k.vu" href="https://freedns.afraid.org">
   </head>
-
   <body id="mainbody">
-	  <button hidden accesskey="m" onclick="manauthuser()"></button>
+    <button hidden accesskey="m" onclick="manauthuser()"></button>
     <div>
       <h2 id="header">&#112;&#114;&#111;&#106;&#101;&#99;&#116;&#32;&#115;&#116;&#111;&#114;&#121;&#116;&#105;&#109;&#101;</h2>
-	    <div>
+      <div>
         <p>stories are for the world. the world is for <b><em>everyone</em></b>.</p>
       </div>
       <button type="button" onclick="window.location.href = '/storytime/'" accesskey="s">stories</button>
-	    <br>
+      <br>
       <button onclick="authuser()" accesskey="@" hidden><abbr title="This feature uses cookies to keep you signed in. No cookies = no sign-in">Sign me in - unavailable</abbr></button>
-	    <form action="javascript:authuser()" method="get">
-				<input type="submit" value="Sign in" id="signinbutton">
-			</form>
+      <form action="javascript:authuser()" method="get">
+        <input type="submit" value="Sign in" id="signinbutton">
+      </form>
       <button onclick="subscribe()">Subscribe to updates</button>
-			<button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'" onclick="void(0)">Edit</button>
-    </div>    <!--<a href="mailto:kaiete@aragon-press.com">send in your masterpiece</a>-->
+      <button hidden id="editbutton" ondblclick="window.location.href = 'https://github.com/kaiete/projectstorytime/edit/main/index.html'" onclick="void(0)">Edit</button>
+    </div>
+    <!--<a href="mailto:kaiete@aragon-press.com">send in your masterpiece</a>-->
     <button hidden type="button" onclick="window.location.href = 'http://afraid.org'"></button>
     <script src="homepage.js"></script>
     <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
-<style>
-  body {
-    background-image: url("/wallpaper.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		font-family: ubuntu, roboto;
-  }
-  #header-background {
-    background-color: black;
-    border-radius: 19px;
-  }
-</style>
-<script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
-<script src="homepage.js"></script>
-
-		<script>
-			var headerElem = document.getElementById("header")
-			function updateHeader() {
-			  if (document.cookie.toString().includes("signedin=true") == true) {
-			  	headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
-				  document.getElementById("signinbutton").value = "Sign out"
-			  } else {
-				  headerElem.innerHTML = "project storytime"
-				  document.getElementById("signinbutton").value = "Sign in"
-		  	}
-			}
-			updateHeader()
-      const subscribe = function() {
-        let sure = confirm("Are you sure? You can unsubscribe at any time.")
-        if (sure) {
-          location.href = "mailto:kaiete@aragon-press.com?body=I would like to sign up for StoryTime updates!"
-        }
+    <style>
+      body {
+      background-image: url("/wallpaper.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: ubuntu, roboto;
       }
-		</script>
+      #header-background {
+      background-color: black;
+      border-radius: 19px;
+      }
+    </style>
+    <script src="https://kaiete.github.io/QueryTools/querytools.js"></script>
+    <script src="homepage.js"></script>
+    <script>
+      var headerElem = document.getElementById("header")
+      function updateHeader() {
+        if (document.cookie.toString().includes("signedin=true") == true) {
+        	headerElem.innerHTML = "Welcome back, " + localStorage.getItem("username") + "!"
+      	  document.getElementById("signinbutton").value = "Sign out"
+        } else {
+      	  headerElem.innerHTML = "project storytime"
+      	  document.getElementById("signinbutton").value = "Sign in"
+       	}
+      }
+      updateHeader()
+         const subscribe = function() {
+           let sure = confirm("Are you sure? You can unsubscribe at any time.")
+           if (sure) {
+             location.href = "mailto:kaiete@aragon-press.com?body=I would like to sign up for StoryTime updates!"
+           }
+         }
+    </script>
   </body>
 </html>
+
