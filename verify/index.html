@@ -34,17 +34,17 @@
     <h1>Oops!</h1>
     <p>StoryTime's for all, but robots can't access some parts of the website, to avoid spam.<br>So can you solve this captcha?<br>Or are you a robot?</p>
     <p>Solve this anagram: hcpact, and enter the missing letter in the first box below.<br>Then, solve this anagram: broto, and enter it in the second box below.
-      <input id="captcha1" type="text" onsubmit="captcha1()">
-      <input id="captcha2" type="text" onsubmit="captcha2()">
-    <p><i>P.S. the boxes are there, but you have to hover over them to see them. Accessibility checks passed, and I can't help it - it looks so cool!</i></p>
+      <input id="captcha1" type="text" oninput="captcha1()">
+      <input id="captcha2" type="text" oninput="captcha2()">
       <style>
         input {
           border: none;
           outline: none;
-          background-color: white;
+          background-color: lightgray;
           color: gray;
           transition: all .35s ease-in-out;
           width: 1in;
+          border-radius: .4em;
         }
         input:hover {
           color: gray;
