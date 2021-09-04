@@ -34,9 +34,7 @@
           `;
           refresh();
         });
-    </script>
-
-    <div id="user-info"></div>
+    </script
     <div id="user-response"></div>
   </body>
   <script>
@@ -46,13 +44,7 @@
       var user = cotter.getLoggedInUser();
       console.log(user);
       if (user) {
-        document.getElementById("user-info").innerHTML = `
-        <div class="title">Welcome, ${user.identifier}</div>
-      `;
-      } else {
-        document.getElementById("user-info").innerHTML = `
-        <div class="title">You're not yet authenticated</div>
-      `;
+        alert("Welcome " + user.token.identifier + "!")
       }
     }
     refresh();
