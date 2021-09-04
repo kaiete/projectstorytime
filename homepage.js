@@ -1,11 +1,5 @@
 console.log("%cBe careful!\n%cDangerous territory below. Never paste or type anything here unless you understand what it will do - it can stop your StoryTime working!","color: red; font-size: 3em;","color: red; font-size: 1em;")
-function hidenosearch() {
-  document.getElementById("searchterm").hidden = true
-}
-var down = false
-if (down) {
-  window.location.replace("https://aragon-press.com/nope/")
-}
+
 //Define QueryTools (modified)
 var qt = {
   mod: function(id, to) {
@@ -51,6 +45,8 @@ var qt = {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
+  document.write("This feature is currently unavailable. To resume browsing StoryTime, reload the page.")
+  return undefined
   if (document.cookie.toString().includes("signedin=true") == false) {
     var user = qt.ask("username:")
     var userok = confirm("Continue as " + user + "?")
