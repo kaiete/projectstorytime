@@ -8,17 +8,44 @@
     <title>StoryTime Sign-in</title>
     <body>
       <script>
-  var cotter = new Cotter({ApiKeyID: "3ce61596-ad16-4c36-97d5-2ca496804b58", ContainerID: "cotter-form-container-form_default"}); // 👈 Specify your API KEY ID
-  cotter
-    .withFormID("form_default") // Use customization for form "form_default"
-    .signInWithLink() // Sign In with Magic Link
-    .showPhoneForm()
-    .then(() => {   
-      window.location.href = "/"; // redirect to the protected page
-    })
-    .catch(err => {
-      console.log(err) // handle error
-    });
-</script>
+      var cotter = new Cotter("3ce61596-ad16-4c36-97d5-2ca496804b58"); // 👈 Specify your API KEY ID here
+
+      cotter
+        .signInWithOTP()
+        .showEmailForm() // to send OTP to a phone number use .showPhoneForm()
+        .then((payload) => {
+          // Read what Cotter Returns
+          var respDiv = document.getElementById("user-response");
+          respDiv.innerHTML = `
+            <div class="success">Verification Success</div> <br/>
+            <div class="title">User info from Cotter:</div>
+            <pre>${JSON.stringify(payload, null, 4)}</pre>
+          `;
+          refresh();
+        });
+    </script>
+
+    <div>Don't forget to enter your API_KEY_ID in the code</div>
+    <div id="user-info"></div>
+    <div id="user-response"></div>
+  </body>
+  <script>
+    function refresh() {
+      var respDiv = document.getElementById("user-info");
+      var cotter = new Cotter("3ce61596-ad16-4c36-97d5-2ca496804b58"); // 👈 Specify your API KEY ID here
+      var user = cotter.getLoggedInUser();
+      console.log(user);
+      if (user) {
+        document.getElementById("user-info").innerHTML = `
+        <div class="title">Welcome, ${user.identifier}</div>
+      `;
+      } else {
+        document.getElementById("user-info").innerHTML = `
+        <div class="title">You're not yet authenticated</div>
+      `;
+      }
+    }
+    refresh();
+  </script>
     </body>
     </html>
