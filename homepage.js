@@ -45,8 +45,6 @@ var qt = {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 function authuser() {
-  document.write("This feature is currently unavailable. To resume browsing StoryTime, reload the page.")
-  return undefined
   if (document.cookie.toString().includes("signedin=true") == false) {
     var user = qt.ask("username:")
     var userok = confirm("Continue as " + user + "?")
