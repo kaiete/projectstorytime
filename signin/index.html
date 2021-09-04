@@ -12,9 +12,8 @@
   cotter
     .withFormID("form_default") // Use customization for form "form_default"
     .signInWithLink() // Sign In with Magic Link
-    .showPhoneForm() // Send Magic Link via Phone Number
     .then(() => {   
-      window.location.href = "/protected"; // redirect to the protected page
+      window.location.href = "/"; // redirect to the protected page
     })
     .catch(err => {
       console.log(err) // handle error
