@@ -61,7 +61,11 @@
              location.href = "mailto:kaiete@aragon-press.com?body=I would like to sign up for StoryTime updates!"
            }
          }
+      function share() {
+        navigator.share({title: document.title, url: location.href})
+      }
     </script>
+    <button onclick="share()" id="share">Share this</button>
   </body>
 </html>
 
